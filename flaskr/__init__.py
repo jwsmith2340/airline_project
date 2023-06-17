@@ -4,8 +4,8 @@ from flask import Flask
 from . import db
 from . import auth
 
-# Run command: flask --app flaskr
-# Run debug: flask --app flaskr --debug
+# Run command: flask --app flaskr run
+# Run debug: flask --app flaskr --debug run
 # Init SQLite DB: flask --app flaskr init-db
 
 def create_app(test_config=None):
