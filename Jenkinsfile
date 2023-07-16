@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Building..."
                 sh '''
-                echo "doing Building stuff..."
+                echo "doing Building stuff via the polling in the jenkins file..."
                 '''
             }
         }
