@@ -5,15 +5,6 @@ pipeline {
     }
 
     stages {
-        stage('Python Setup') {
-            steps {
-                echo "Upgrading pip..."
-                sh '''
-                sudo apt install python3-pip --upgrade
-                '''
-            }
-        }
-        
         stage('Build') {
             steps {
                 echo "Building..."
