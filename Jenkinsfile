@@ -3,6 +3,7 @@ pipeline {
     triggers {
         pollSCM 'H/5 * * * *' 
     }
+
     stages {
         stage('Python Setup') {
             steps {
@@ -12,14 +13,13 @@ pipeline {
                 '''
             }
         }
-
-    stages {
+        
         stage('Build') {
             steps {
                 echo "Building..."
                 sh '''
                 pip install -r requirements.txt
-                '''
+               '''
             }
         }
 
