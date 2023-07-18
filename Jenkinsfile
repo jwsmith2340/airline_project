@@ -4,11 +4,21 @@ pipeline {
         pollSCM 'H/5 * * * *' 
     }
     stages {
+        stage('Python Setup') {
+            steps {
+                echo "Upgrading pip..."
+                sh '''
+                sudo apt install python3-pip --upgrade
+                '''
+            }
+        }
+
+    stages {
         stage('Build') {
             steps {
                 echo "Building..."
                 sh '''
-                echo "doing Building stuff via the polling in the jenkins file..."
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -17,7 +27,7 @@ pipeline {
             steps {
                 echo "Testing..."
                 sh '''
-                echo "doing Testing stuff..."
+                pytest tests
                 '''
             }
         }
